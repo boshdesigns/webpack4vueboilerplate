@@ -11,7 +11,7 @@ import VueRouter from "vue-router";
 import VueResource from "vue-resource";
 import routes from "./utils/routes";
 import HelloWebpack from "./pages/HelloWebpack.vue";
-import styles from "./css/styles.scss";
+import styles from "./css/main.scss";
 
 // Yay! Routes FTW.
 Vue.use(VueRouter);
@@ -20,6 +20,7 @@ Vue.use(VueResource);
 // Vue.use(Store) //Get your own vuex store from https://vuex.vuejs.org/en/
 
 // Vue Resource feature
+// https://github.com/pagekit/vue-resource/blob/develop/docs/http.md#interceptors
 Vue.http.interceptors.push((request, next) => {
   if (request.params === undefined) {
     request.params = {};

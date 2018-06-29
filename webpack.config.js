@@ -76,7 +76,7 @@ const config = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "css/styles.[hash].css",
+      filename: "css/main.[hash].css",
       chunkFilename: "[id].css"
     }),
     new webpack.DefinePlugin({
@@ -92,6 +92,9 @@ const config = {
         test: /\.vue$/,
         loader: "vue-loader",
         options: {
+          // should use postcss-preset-env instead
+          // https://preset-env.cssdb.org/
+          // -------
           // postcss: [require('postcss-cssnext')()],
           // options: {
           //     extractCSS: true
